@@ -1,0 +1,36 @@
+[
+  {
+    "name": "!Avi Cohen",
+    "email": "avi@gmail.com",
+    "birthday": "2000.05.02",
+    "phones": [
+      "033654115",
+      "0502361226"
+    ],
+    "avatar": "Avi.jpg"
+  },
+  {
+    "name": "Rina Levi",
+    "email": "rina@gmail.com",
+    "birthday": "2003/05/14",
+    "phones": [
+      "0541206222"
+    ],
+    "avatar": "Rina.png"
+  },
+  {
+    "name": "Shimi Biton",
+    "email": "Shimi@gmail.com",
+    "birthday": "2001/09/03",
+    "avatar": "Default.png"
+  },
+  {
+    "name": "Vered Levi",
+    "email": "vered@gmail.com",
+    "birthday": "2003/07/21",
+    "phones": [
+      "0541222223"
+    ],
+    "avatar": "Vered.jpg"
+  }
+]

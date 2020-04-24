@@ -1,0 +1,80 @@
+<app-page-header
+  [headerTitle]="headerTitle"
+  [headerIcon]="headerIcon"
+  [headerDescription]="headerDescription"
+>
+</app-page-header>
+
+<div class="row">
+  <div class="col-8">
+    <input
+      [(ngModel)]="term"
+      (input)="onInputTerm()"
+      class="form-control"
+      type="text"
+      name="trem"
+      id="trem"
+      placeholder="Search Customer By Phone Number"
+    />
+  </div>
+  <div class="col-4">
+    <a href="" class="float-right btn btn-primary" routerLink="/customers/new">
+      <i class="fas fa-plus-circle mr-2"></i>Add New Customre
+    </a>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-12">
+    <table *ngIf="customers; else noCustomrs" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers; let x = index">
+          <td>
+            {{ x + 1 }}
+            <a
+              class="ml-3"
+              href=""
+              routerLink="/customer/{{ customer.id }}/edit"
+            >
+              <i class="fa fa-pen"></i>
+            </a>
+            <a
+              class="ml-3"
+              href=""
+              (click)="
+                onClickDeleteCustomer(
+                  customer.id,
+                  customer.firstName,
+                  customer.lastName,
+                  $event
+                )
+              "
+            >
+              <i class="fas fa-trash-alt"></i>
+            </a>
+          </td>
+          <td>
+            <a href="" routerLink="/customer/{{ customer.id }}">{{
+              customer.firstName
+            }}</a>
+          </td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noCustomrs>
+      <p>No customers available...</p>
+    </ng-template>
+  </div>
+</div>
